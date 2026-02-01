@@ -86,25 +86,7 @@ export function updateDeliveryOption(productId, deliveryOptionId) {
   saveToStorage();
 }
 
-<<<<<<< HEAD
 // loadCart removed: cart is persisted in localStorage and initialized
 // via `loadFromStorage()` at module load time. If code paths still
 // expect `loadCart(callback)`, update callers to rely on `cart` directly
 // or await any product data loading before rendering.
-=======
-export function loadCart(fun) {
-  (async () => {
-    try {
-      const res = await fetch("./data/cart.json");
-      if (!res.ok) {
-        throw new Error(`Network response was not ok: ${res.status}`);
-      }
-      const body = await res.text();
-      console.log(body);
-      if (typeof fun === "function") fun();
-    } catch (err) {
-      console.error("Failed to load cart:", err);
-    }
-  })();
-}
->>>>>>> e76ee8ab7610c90d65321dc830fa7ff12181e473
